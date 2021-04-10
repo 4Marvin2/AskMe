@@ -1,0 +1,24 @@
+{% extends "include/base.html" %}
+{% load static %}
+
+{% block headline %}
+    <div class="d-flex align-items-end ms-5 mb-4 mt-2">
+        <div class="w-25 caption">
+            New Question
+        </div>
+        <div class="w-25 pb-2 hot-questions">
+            <a href="{% url 'hot_questions' %}">Hot Questions</a>
+        </div>
+    </div>
+{% endblock headline %}
+
+{% block content %}
+    {% for question in questions %}
+        {% include "include/question.html" %}
+    {% endfor %}
+    {% include "include/paginator.html" %}
+{% endblock content %}
+
+{% block side %}
+    {% include 'include/side.html' %}
+{% endblock side %}

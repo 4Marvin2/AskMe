@@ -1,0 +1,47 @@
+body {
+    padding-top: 8rem;
+}
+.question {
+    border: 1px grey solid;
+    margin-top: 20px;
+    border-radius: 15px;
+    padding: 20px;
+}
+.user {
+    margin-left: 20px;
+}
+.navbar-brand {
+    font-size: xx-large;
+}
+.brand-description {
+    position: absolute;
+    left: 5%;
+    margin-top: 9px;
+}
+.brand {
+    position: relative;
+}
+.caption {
+    font-size: xx-large;
+}
+.hot-questions {
+    font-size: x-large;
+}
+.popular-tag {
+    font-size: x-large;
+}
+.tag {
+    font-size: large;
+}
+.question-link {
+    font-size: x-large;
+}
+.tag-link{
+    text-decoration: none;
+}
+.popular-tag > a:hover {
+    text-decoration: underline;
+}
+.tag > a:hover {
+    text-decoration: underline;
+}

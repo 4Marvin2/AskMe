@@ -1,0 +1,56 @@
+{% extends "include/base.html" %}
+{% load static %}
+
+{% block headline %}
+    <div class="d-flex align-items-end ms-5 ps-5 mb-4 mt-2">
+        <div class="caption">
+            Log In
+        </div>
+    </div>
+{% endblock headline %}
+
+{% block content %}
+    <form class="needs-validation" novalidate>
+        <div class="d-flex ms-5 ps-5 mb-3 w-50">
+            <label for="inputLogin" class="col-sm-4 col-form-label col-form-label-lg">Login</label>
+            <div class="d-flex flex-column">
+                <div class="d-flex w-100 ms-3">
+                    <input type="text" class="form-control" placeholder="Marvin" id="inputLogin" maxlength="15" required>
+                </div>
+                <div class="d-flex w-100 ms-3 invalid-feedback">
+                    Please enter username.
+                </div>
+            </div>
+        </div>
+        <div class="d-flex ms-5 ps-5 mb-3 w-50">
+            <label for="inputPassword" class="col-sm-4 col-form-label col-form-label-lg">Password</label>
+            <div class="d-flex flex-column">
+                <div class="d-flex w-100 ms-3">
+                    <input type="password" class="form-control" id="inputPassword" maxlength="20" required>
+                </div>
+                <div class="d-flex w-100 ms-3 invalid-feedback">
+                    Please enter password.
+                </div>
+            </div>
+        </div>
+        <div class="d-flex mb-3 ms-5 ps-5 w-50 justify-content-start">
+            <div class="col-sm-4"></div>
+            <div class="d-flex ms-3">
+                <button type="submit" class="btn btn-success btn-lg">Log In</button>
+            </div>
+        </div>
+    </form>
+
+    <div class="d-flex ms-5 ps-5 mb-3 w-50">
+        <div class="col-sm-4"></div>
+        <div class="d-flex ms-3">
+            <a href="{% url 'signup' %}">create new account</a>
+        </div>
+    </div>
+{% endblock content %}
+
+{% block side %}
+    {% include 'include/side.html' %}
+{% endblock side %}
+
+

@@ -1,0 +1,43 @@
+{% extends 'include/base.html' %}
+{% load static %}
+
+{% block headline %}
+    <div class="d-flex align-items-end ms-5 mb-4 mt-2">
+        <div class="w-25 caption">
+            New Question
+        </div>
+    </div>
+{% endblock headline %}
+
+{% block content %}
+    <form>
+        <div class="d-flex ms-5 mb-3">
+            <label for="inputTitle" class="col-sm-2 col-form-label col-form-label-lg">Title</label>
+            <div class="d-flex w-100">
+                <input type="text" class="form-control" placeholder="How to do homework?" id="inputTitle">
+            </div>
+        </div>
+        <div class="d-flex ms-5 mb-3">
+            <label for="inputText" class="col-sm-2 col-form-label col-form-label-lg">Text</label>
+            <div class="d-flex w-100">
+                <textarea class="form-control" rows="20" placeholder="Enter your question" id="inputText"></textarea>
+            </div>
+        </div>
+        <div class="d-flex ms-5 mb-3">
+            <label for="inputTags" class="col-sm-2 col-form-label col-form-label-lg">Tags</label>
+            <div class="d-flex w-100">
+                <input type="text" class="form-control" placeholder="python" id="inputTags">
+            </div>
+        </div>
+        <div class="d-flex mb-3 w-100 justify-content-end">
+            <div class="d-flex">
+                <button type="submit" class="btn btn-success btn-lg">ASK!</button>
+            </div>
+
+        </div>
+      </form>
+{% endblock content %}
+
+{% block side %}
+    {% include 'include/side.html' %}
+{% endblock side %}

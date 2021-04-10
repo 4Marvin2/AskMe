@@ -1,0 +1,15 @@
+{% extends "include/base.html" %}
+{%  load static %}
+
+{% block content %}
+    {% include "include/question_for_ask.html" %}
+    {% for answer in answers %}
+        {% include "include/answer.html" %}
+    {% endfor %}
+    {% include "include/answer_form.html" %}
+    {% include "include/paginator.html" %}
+{% endblock content %}
+
+{% block side %}
+    {% include 'include/side.html' %}
+{% endblock side %}
