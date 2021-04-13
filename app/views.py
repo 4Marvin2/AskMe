@@ -10,7 +10,7 @@ questions = [
         'likes': random.randint(0, 50),
         'dislikes': random.randint(0, 50),
         'number_of_answers': 2,
-        'tags_name': {f'Tag{random.randint(0, 10)}', f'Tag{random.randint(0, 10)}'}
+        'tags_name': {f'Tag{random.randint(0, 9)}', f'Tag{random.randint(0, 9)}'}
     } for i in range(30)
 ]
 
