@@ -1,5 +1,15 @@
 body {
-    padding-top: 8rem;
+  margin: 0;
+  padding-top: 8rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+main {
+  flex-grow: 1;
+}
+footer {
+  flex-shrink: 0;
 }
 .question {
     border: 1px grey solid;
@@ -27,11 +37,17 @@ body {
 .hot-questions {
     font-size: x-large;
 }
+.super-popular-tag {
+    font-size: 160%;
+}
 .popular-tag {
-    font-size: x-large;
+    font-size: 140%;
 }
 .tag {
-    font-size: large;
+    font-size: 120%;
+}
+.common-tag {
+    font-size: 100%;
 }
 .question-link {
     font-size: x-large;

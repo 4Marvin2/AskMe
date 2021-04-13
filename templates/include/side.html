@@ -1,3 +1,5 @@
+{% load static %}
+
 <div class="d-flex flex-column align-items-left ms-5 ps-5">
     <div class="d-flex caption mt-5 pt-4">
         Popular Tags
@@ -6,19 +8,19 @@
     {% for tag in popular_tags %}
             {% if tag.popularity > 25 %}
                 <div class="d-flex me-5 mb-2 tag">
-                    <a class="tag-link link-danger" href="{% url 'tag_questions' name=tag.name %}">{{ tag.name }}</a>
+                    <a class="tag-link link-danger super-popular-tag" href="{% url 'tag_questions' name=tag.name %}">{{ tag.name }}</a>
                 </div>
             {% elif tag.popularity > 20 %}
                 <div class="d-flex me-5 mb-2 tag">
-                    <a class="tag-link link-warning" href="{% url 'tag_questions' name=tag.name %}">{{ tag.name }}</a>
+                    <a class="tag-link link-warning popular-tag" href="{% url 'tag_questions' name=tag.name %}">{{ tag.name }}</a>
                 </div>
             {% elif tag.popularity > 15 %}
                 <div class="d-flex me-5 mb-2 tag">
-                    <a class="tag-link link-success" href="{% url 'tag_questions' name=tag.name %}">{{ tag.name }}</a>
+                    <a class="tag-link link-success tag" href="{% url 'tag_questions' name=tag.name %}">{{ tag.name }}</a>
                 </div>
             {% elif tag.popularity > 5 %}
                 <div class="d-flex me-5 mb-2 tag">
-                    <a class="tag-link link-dark" href="{% url 'tag_questions' name=tag.name %}">{{ tag.name }}</a>
+                    <a class="tag-link link-dark common-tag" href="{% url 'tag_questions' name=tag.name %}">{{ tag.name }}</a>
                 </div>
             {% endif %}
     {% endfor %}
