@@ -77,11 +77,12 @@ WSGI_APPLICATION = 'AskMe.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'askme_db',
-        'USER': '4Marvin2',
+        'USER': 'marvin42',
         'PASSWORD': 'vbif',
         'HOST': 'localhost',
+        'PORT': '',
     }
 }
 

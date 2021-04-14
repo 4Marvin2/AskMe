@@ -75,7 +75,7 @@ class LikeQuestion(models.Model):
         verbose_name_plural = 'Лайки вопросов'
 
 
-class LikeAnswers(models.Model):
+class LikeAnswer(models.Model):
     answer_id = models.ForeignKey('Answer', on_delete=models.CASCADE, verbose_name='Ответ')
     profile_id = models.ForeignKey('Profile', on_delete=models.CASCADE, verbose_name='Профиль')
     is_like = models.BooleanField(default=True, verbose_name='Лайк или дизлайк')
