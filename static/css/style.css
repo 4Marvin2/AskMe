@@ -32,6 +32,7 @@ footer {
     position: relative;
 }
 .caption {
+    font-weight: 500;
     font-size: xx-large;
 }
 .hot-questions {
@@ -55,9 +56,61 @@ footer {
 .tag-link{
     text-decoration: none;
 }
-.popular-tag > a:hover {
-    text-decoration: underline;
-}
 .tag > a:hover {
     text-decoration: underline;
+}
+.text-align-center {
+    font-size: large;
+    text-align: center;
+}
+.member-link {
+    font-size: x-large;
+    text-decoration: none;
+}
+.member > a:hover {
+    text-decoration: underline;
+}
+.question-link > a {
+    font-weight: 500;
+    text-decoration: none;
+}
+.question-link > a:hover {
+    text-decoration: underline;
+}
+.question-tags > a {
+    text-decoration: none;
+}
+.question-tags > a:hover {
+    text-decoration: underline;
+}
+
+/*paginator*/
+.pagination > li > a
+{
+    background-color: white;
+    color: #000000;
+}
+.pagination > li > a:focus,
+.pagination > li > a:hover,
+.pagination > li > span:focus,
+.pagination > li > span:hover
+{
+    color: #5cb85c;
+    background-color: #eee;
+    border-color: #ddd;
+}
+.pagination > .active > a
+{
+    color: white;
+    background-color: #5cb85c !Important;
+    border: solid 1px #5cb85c !Important;
+}
+.pagination > .active > a:hover
+{
+    background-color: #5cb85c !Important;
+    border: solid 1px #5cb85c;
+}
+
+.text-bold {
+    font-weight: 500;
 }
