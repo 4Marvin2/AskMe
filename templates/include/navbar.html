@@ -19,35 +19,38 @@
                     </form>
                 </div>
                 <!-- если пользователь авторизирован -->
+                {% if request.user.is_authenticated %}
                 <div class="d-flex">
                     <div class="d-flex align-items-end">
-                        <img class="rounded-circle" src="{% static "img/avatars/80.png" %}" width="100px">
+                        <img class="rounded-circle" src="{{ request.user.profile.avatar.url }}" width="100px" height="100px">
                     </div>
                     <div class="d-flex flex-column">
                         <div class="d-flex text-light ps-3 mt-3 mb-3">
-                            Mr. Prikolist
+                            {{ request.user.username }}
                         </div>
                         <div class="d-flex mt-3">
                             <div class="pe-2 ps-3">
                                 <a href="{% url 'settings' %}" class="btn btn-success" tabindex="-1" role="button" aria-disabled="true">Settings</a>
                             </div>
                             <div class="px-2">
-                                <a href="#" class="btn btn-danger" tabindex="-1" role="button" aria-disabled="true">Log Out</a>
+                                <a href="{% url 'logout' %}" class="btn btn-danger" tabindex="-1" role="button" aria-disabled="true">Log Out</a>
                             </div>
                         </div>
                     </div>
                 </div>
+                {% else %}
                 <!-- если пользователь не авторизирован -->
-{#                <div class="d-flex">#}
-{#                    <div class="d-flex align-items-center me-2">#}
-{#                        <div class="pe-2 ps-3">#}
-{#                            <a href="{% url 'login' %}" class="btn btn-success" tabindex="-1" role="button" aria-disabled="true">Log In</a>#}
-{#                        </div>#}
-{#                        <div class="px-2">#}
-{#                            <a href="{% url 'signup' %}" class="btn btn-success" tabindex="-1" role="button" aria-disabled="true">Sign Up</a>#}
-{#                        </div>#}
-{#                    </div>#}
-{#                </div>#}
+                <div class="d-flex">
+                    <div class="d-flex align-items-center me-2">
+                        <div class="pe-2 ps-3">
+                            <a href="{% url 'login' %}" class="btn btn-success" tabindex="-1" role="button" aria-disabled="true">Log In</a>
+                        </div>
+                        <div class="px-2">
+                            <a href="{% url 'signup' %}" class="btn btn-success" tabindex="-1" role="button" aria-disabled="true">Sign Up</a>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
             </div>
         </div>
     </nav>

@@ -10,25 +10,20 @@
 {% endblock headline %}
 
 {% block content %}
-    <form>
+    <form method="post" class="needs-validation" novalidate>
+        {% csrf_token %}
+
+        {% for form_field in form %}
         <div class="d-flex ms-5 mb-3">
-            <label for="inputTitle" class="col-sm-2 col-form-label col-form-label-lg">Title</label>
+            <label for="inputTitle" class="col-sm-2 col-form-label col-form-label-lg">{{ form_field.label }}</label>
             <div class="d-flex w-100">
-                <input type="text" class="form-control" placeholder="How to do homework?" id="inputTitle">
+                {{ form_field }}
+                <div class="d-flex w-100 ms-3 invalid-feedback">
+                    {{ form_field.errors }}
+                </div>
             </div>
         </div>
-        <div class="d-flex ms-5 mb-3">
-            <label for="inputText" class="col-sm-2 col-form-label col-form-label-lg">Text</label>
-            <div class="d-flex w-100">
-                <textarea class="form-control" rows="20" placeholder="Enter your question" id="inputText"></textarea>
-            </div>
-        </div>
-        <div class="d-flex ms-5 mb-3">
-            <label for="inputTags" class="col-sm-2 col-form-label col-form-label-lg">Tags</label>
-            <div class="d-flex w-100">
-                <input type="text" class="form-control" placeholder="python" id="inputTags">
-            </div>
-        </div>
+        {% endfor %}
         <div class="d-flex mb-3 w-100 justify-content-end">
             <div class="d-flex">
                 <button type="submit" class="btn btn-success btn-lg">ASK!</button>

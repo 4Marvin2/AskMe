@@ -135,6 +135,7 @@ class LikeQuestion(models.Model):
                 self.question_id.rating -= 1
             self.question_id.save()
         super(LikeQuestion, self).save(*args, **kwargs)
+        return self.question_id.rating
 
     def delete(self, *args, **kwargs):
         if self.is_like:
@@ -143,15 +144,17 @@ class LikeQuestion(models.Model):
             self.question_id.rating += 1
         self.question_id.save()
         super(LikeQuestion, self).delete(*args, **kwargs)
+        return self.question_id.rating
 
     def change_flag_is_like(self):
         if self.is_like:
-            self.question_id.rating += 2
-        else:
             self.question_id.rating -= 2
+        else:
+            self.question_id.rating += 2
         self.is_like = not self.is_like
         self.save()
         self.question_id.save()
+        return self.question_id.rating
 
     class Meta:
         verbose_name = 'Лайк вопроса'
@@ -177,6 +180,7 @@ class LikeAnswer(models.Model):
                 self.answer_id.rating -= 1
             self.answer_id.save()
         super(LikeAnswer, self).save(*args, **kwargs)
+        return self.question_id.rating
 
     def delete(self, *args, **kwargs):
         if self.is_like:
@@ -185,15 +189,17 @@ class LikeAnswer(models.Model):
             self.answer_id.rating += 1
         self.answer_id.save()
         super(LikeAnswer, self).delete(*args, **kwargs)
+        return self.question_id.rating
 
     def change_flag_is_like(self):
         if self.is_like:
-            self.answer_id.rating += 2
-        else:
             self.answer_id.rating -= 2
+        else:
+            self.answer_id.rating += 2
         self.is_like = not self.is_like
         self.save()
         self.answer_id.save()
+        return self.question_id.rating
 
     class Meta:
         verbose_name = 'Лайк ответа'
